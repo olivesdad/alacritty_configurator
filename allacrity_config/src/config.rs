@@ -54,7 +54,7 @@ pub struct Window {
     opacity: Option<f32>,
 }
 
-// Level 2 
+// Level 2
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Primary {
     background: Option<String>,
@@ -64,7 +64,5 @@ pub struct Primary {
 #[derive(Serialize, Deserialize, Debug)]
 pub struct FontDef {
     family: Option<String>,
-    style: Option<String> // Change this to enum later
+    style: Option<String>, // Change this to enum later
 }
-
-
