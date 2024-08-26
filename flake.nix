@@ -24,9 +24,11 @@
         devShells.default = with pkgs; mkShell {
           buildInputs = [
             rust-toolchain
+	    rust-bin.beta.latest.default
           ];
 
           shellHook = ''
+	   export RUST_SRC_PATH="${rust-toolchain}/lib/rustlib/src/rust/library" 
           '';
         };
       }

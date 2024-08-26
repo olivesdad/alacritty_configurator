@@ -3,6 +3,7 @@ use config::Config;
 use dirs::home_dir;
 
 fn main() {
+    // 
     let mut something: Result<Config, ()> = Err(());
     if let Some(mut path) = home_dir() {
         println!("{:?}", &path);
@@ -17,4 +18,7 @@ fn main() {
     } else {
         println!("you suck");
     }
+
+    let home = home_dir();
+    
 }
