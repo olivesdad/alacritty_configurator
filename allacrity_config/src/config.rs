@@ -13,15 +13,20 @@ pub fn load_config(fp: std::path::PathBuf) -> Result<Config, ()> {
     }
 }
 
+pub fn write_config(fp: std::path::PathBuf, config: Config) -> Result<(),()> {
+    
+    Err(())
+} 
+
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Config {
-    colors: Option<Colors>,
-    cursor: Option<Cursor>,
-    scrolling: Option<Scrolling>,
-    bell: Option<Bell>,
-    terminal: Option<Terminal>,
-    mouse: Option<Mouse>,
-    hint: Option<Hint>,
+    pub colors: Option<Colors>,
+    pub cursor: Option<Cursor>,
+    pub scrolling: Option<Scrolling>,
+    pub bell: Option<Bell>,
+    pub terminal: Option<Terminal>,
+    pub mouse: Option<Mouse>,
+    pub hint: Option<Hint>,
     keyboard: Option<Keyboard>,
     debug: Option<Debug>,
     font: Option<Font>,
@@ -57,7 +62,7 @@ pub struct Debug {}
 // DONE //
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Colors {
-    primary: Option<Primary>,
+    pub primary: Option<Primary>,
     cursor: Option<Cursor>,
     vi_mode_cursor: Option<ViModeCursor>,
     search: Option<Search>,
@@ -94,7 +99,7 @@ pub struct Window {
 // Level 2
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Primary {
-    background: Option<String>,
+    pub background: Option<String>,
     foreground: Option<String>,
 }
 
@@ -105,11 +110,11 @@ pub struct FontDef {
 }
 
 // TODO
-/* 
+/*
 
- */
+*/
 
- #[derive(Serialize, Deserialize, Debug)]
+#[derive(Serialize, Deserialize, Debug)]
 pub struct ViModeCursor {}
 #[derive(Serialize, Deserialize, Debug)]
 pub struct Search {}
@@ -131,8 +136,6 @@ pub struct IndexedColors {}
 pub struct TransparentBgColors {}
 #[derive(Serialize, Deserialize, Debug)]
 pub struct DrawBoldText {}
-
-
 
 // Shared Structs
 
